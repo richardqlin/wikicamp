@@ -1,0 +1,12 @@
+{%extends "base.html" %}
+{% load wikilink %}
+{%block title%}{{page_name}}{%endblock%}
+
+{%block content%}
+<h1>{{page_name|escape}}</h1>
+{{content|wikify|safe}}
+<hr/>
+<p>Tags: {% for tag in tags %}<a href='/wiki/tag/{{tag.name}}/'> {{ tag.name}}</a> {% endfor %}</p>
+ <a href='/wiki/page/{{page_name}}/edit/'>Edit this page?</a>
+
+{%endblock%}

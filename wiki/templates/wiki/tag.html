@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} Pages tagged {{tag_name}}{%endblock%}
+
+{% block content %}
+<h1> Page tagged with {{tag_name}} </h1>
+
+<ul>
+{% for page in pages %}
+	<li><a href='/wiki/page/{{page.name|escape}}/'>{{page.name|escape}}</a></li>
+{% endfor %}
+
+</ul>
+
+{%endblock%}
