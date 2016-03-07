@@ -79,6 +79,7 @@ def save_page(request,page_name):
 
 def view_tag(request,tag_name):
 	tag=Tag.objects.get(pk=tag_name)
+	print 'tag:',tag
 	pages=tag.page_set.all()
 	return render_to_response('tag.html',{'tag_name':tag_name,'pages':pages})
 
